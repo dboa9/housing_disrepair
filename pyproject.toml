@@ -1,0 +1,68 @@
+# File: pyproject.toml
+# Location: /mnt/c/Users/mrdbo/Documents/ReactDev/AWS/AWS-Amplify/AWS-GIT-DEPLOY/Phase21/housing_disrepair/pyproject.toml
+# Purpose: Configuration file for Python tools including Ruff linter and formatter
+
+[tool.ruff]
+# Enable pycodestyle (`E`), Pyflakes (`F`), and import sorting (`I`)
+select = ["E", "F", "I", "W", "C90"]
+ignore = []
+
+# Allow autofix for all enabled rules (when `--fix`) is provided.
+fixable = ["A", "B", "C", "D", "E", "F", "I"]
+unfixable = []
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+# Same as Black.
+line-length = 88
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.8
+target-version = "py38"
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["E402"]
+"**/{tests,docs,tools}/*" = ["E402"]
+
+[tool.ruff.isort]
+combine-as-imports = true
+known-first-party = ["housing_disrepair"]
+
+[tool.ruff.flake8-quotes]
+docstring-quotes = "double"
+inline-quotes = "single"
+
+[tool.ruff.pydocstyle]
+convention = "google"
+
+[tool.ruff.pycodestyle]
+max-doc-length = 88
